@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo @media Responsivo</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            background: #444;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background: #666;
+        }
+
+        main {
+            display: flex;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        article {
+            flex: 3;
+            background: #f4f4f4;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        aside {
+            flex: 1;
+            background: #ddd;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        /* 📱 Estilos responsivos */
+        @media (max-width: 768px) {
+            main {
+                flex-direction: column;
+                /* Artículo y aside en columna */
+            }
+
+            nav {
+                flex-direction: column;
+                /* Menú vertical */
+                text-align: center;
+            }
+
+            nav a {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Mi Sitio Responsivo</h1>
+    </header>
+
+    <nav>
+        <a href="#">Inicio</a>
+        <a href="#">Servicios</a>
+        <a href="#">Contacto</a>
+    </nav>
+
+    <main>
+        <article>
+            <h2>Artículo principal</h2>
+            <p>
+                Este es el contenido principal de la página.
+                En pantallas grandes se muestra a la izquierda y la barra lateral a la derecha.
+                En pantallas pequeñas, se apilan uno debajo del otro.
+            </p>
+        </article>
+        <aside>
+            <h3>Barra lateral</h3>
+            <p>
+                Aquí va información adicional o publicidad.
+            </p>
+        </aside>
+    </main>
+
+    <footer>
+        <p>© 2025 Mi sitio responsivo</p>
+    </footer>
+</body>
+
+</html>

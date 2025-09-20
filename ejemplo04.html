@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo HTML5</title>
+</head>
+
+<body>
+
+    <!-- Estructura semántica -->
+    <header>
+        <h1>Mi Página en HTML5</h1>
+        <nav>
+            <a href="#inicio">Inicio</a> |
+            <a href="#articulo">Artículo</a> |
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Sección con artículo -->
+        <section id="articulo">
+            <article>
+                <h2>Noticias de Tecnología</h2>
+                <p>HTML5 permite crear aplicaciones más rápidas y seguras en la web.</p>
+            </article>
+        </section>
+
+        <!-- Multimedia nativo -->
+        <section>
+            <h2>Video de demostración</h2>
+            <video controls width="400">
+                <source src="video.mp4" type="video/mp4">
+                Tu navegador no soporta video HTML5.
+            </video>
+        </section>
+
+        <!-- Canvas -->
+        <section>
+            <h2>Dibujo en Canvas</h2>
+            <canvas id="miCanvas" width="300" height="150" style="border:1px solid #000;"></canvas>
+        </section>
+
+        <!-- Formulario mejorado -->
+        <section id="contacto">
+            <h2>Formulario de Contacto</h2>
+            <form>
+                <label>Correo:
+                    <input type="email" required>
+                </label><br><br>
+
+                <label>Fecha de cita:
+                    <input type="date">
+                </label><br><br>
+
+                <label>Edad:
+                    <input type="number" min="18" max="99">
+                </label><br><br>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Mi Página Web</p>
+    </footer>
+
+    <!-- Script para Canvas -->
+    <script>
+        const canvas = document.getElementById('miCanvas');
+        const ctx = canvas.getContext('2d');
+        ctx.fillStyle = 'blue';
+        ctx.fillRect(20, 20, 100, 100);
+    </script>
+
+</body>
+
+</html>

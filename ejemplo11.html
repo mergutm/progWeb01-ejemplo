@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo border-collapse</title>
+    <style>
+        table {
+            width: 60%;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        th,
+        td {
+            border: 2px solid black;
+            padding: 10px;
+        }
+
+        /* Tabla con bordes separados */
+        .separate {
+            border-collapse: separate;
+            border-spacing: 10px;
+            /* solo funciona con separate */
+        }
+
+        /* Tabla con bordes colapsados */
+        .collapse {
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Tabla con <code>border-collapse: separate;</code></h2>
+    <table class="separate">
+        <tr>
+            <th>A</th>
+            <th>B</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+    </table>
+
+    <h2>Tabla con <code>border-collapse: collapse;</code></h2>
+    <table class="collapse">
+        <tr>
+            <th>A</th>
+            <th>B</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+    </table>
+</body>
+
+</html>

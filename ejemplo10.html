@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tabla comparativa de estilos CSS</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            /*collapse / separate*/
+            margin: 20px 0;
+            font-family: Arial, sans-serif;
+        }
+
+        th,
+        td {
+            border: 1px solid #333;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background: #333;
+            color: white;
+        }
+
+        /* Estilos demostrativos */
+        .bg-demo {
+            background: lightblue;
+        }
+
+        .color-demo {
+            color: darkred;
+        }
+
+        .padding-demo {
+            padding: 30px;
+            background: #eee;
+        }
+
+        .textalign-demo {
+            text-align: right;
+            background: #f9f9f9;
+        }
+
+        .decoration-demo {
+            text-decoration: underline;
+        }
+
+        .border-demo {
+            border: 3px dashed green;
+        }
+
+        .radius-demo {
+            border: 2px solid blue;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Tabla comparativa de propiedades CSS</h1>
+    <table>
+        <tr>
+            <th>Propiedad</th>
+            <th>Ejemplo visual</th>
+            <th>Descripción</th>
+        </tr>
+        <tr>
+            <td><code>background</code></td>
+            <td class="bg-demo">Fondo azul claro</td>
+            <td>Define el fondo del elemento.</td>
+        </tr>
+        <tr>
+            <td><code>color</code></td>
+            <td class="color-demo">Texto en rojo oscuro</td>
+            <td>Define el color del texto.</td>
+        </tr>
+        <tr>
+            <td><code>padding</code></td>
+            <td class="padding-demo">Caja con más espacio interno</td>
+            <td>Espacio entre el contenido y el borde.</td>
+        </tr>
+        <tr>
+            <td><code>text-align</code></td>
+            <td class="textalign-demo">Texto alineado a la derecha</td>
+            <td>Alineación del texto (izquierda, centro, derecha, justificado).</td>
+        </tr>
+        <tr>
+            <td><code>text-decoration</code></td>
+            <td class="decoration-demo">Texto subrayado</td>
+            <td>Agrega decoraciones: <code>underline</code>, <code>line-through</code>, <code>overline</code>.</td>
+        </tr>
+        <tr>
+            <td><code>border</code></td>
+            <td class="border-demo">Borde punteado verde</td>
+            <td>Define el grosor, estilo y color del borde.</td>
+        </tr>
+        <tr>
+            <td><code>border-radius</code></td>
+            <td class="radius-demo">Caja con esquinas redondeadas</td>
+            <td>Redondea las esquinas del borde.</td>
+        </tr>
+    </table>
+</body>
+
+</html>

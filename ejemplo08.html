@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pseudo-estados de enlaces</title>
+    <style>
+        nav {
+            margin: 20px;
+        }
+
+        /* 1. Enlaces no visitados */
+        nav a:link {
+            color: blue;
+            text-decoration: none;
+        }
+
+        /* 2. Enlaces visitados */
+        nav a:visited {
+            color: purple;
+        }
+
+        /* 3. Enlaces al pasar el cursor */
+        nav a:hover {
+            color: white;
+            background: green;
+            padding: 5px;
+            border-radius: 4px;
+        }
+
+        /* 4. Enlaces al hacer clic */
+        nav a:active {
+            color: yellow;
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ejemplo de pseudo-estados en enlaces</h1>
+    <nav>
+        <a href="https://www.google.com" target="_blank">Google</a> |
+        <a href="https://www.wikipedia.org" target="_blank">Wikipedia</a> |
+        <a href="https://www.openai.com" target="_blank">OpenAI</a>
+    </nav>
+</body>
+
+</html>
