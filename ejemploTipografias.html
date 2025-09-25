@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ejemplos de Tipografías — Sans Serif, Sans, Script</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Roboto:wght@300;400;700&family=Pacifico&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #f7f8fb;
+            --card: #ffffff;
+            --muted: #6b7280;
+            --accent: #0ea5a4;
+            --radius: 12px;
+            --shadow: 0 6px 18px rgba(19, 19, 24, 0.06);
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            font-family: 'Open Sans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+            background: var(--bg);
+            margin: 0;
+            color: #111827
+        }
+
+        .wrap {
+            max-width: 980px;
+            margin: 40px auto;
+            padding: 24px
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            gap: 18px
+        }
+
+        .card {
+            background: var(--card);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 20px
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 1.6rem
+        }
+
+        p.lead {
+            margin-top: 10px;
+            color: var(--muted)
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 18px;
+            margin-top: 20px
+        }
+
+        @media(min-width:880px) {
+            .grid {
+                grid-template-columns: 1fr 1fr
+            }
+        }
+
+        .sample {
+            padding: 20px;
+            border-radius: 10px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(250, 250, 252, 0.95));
+        }
+
+        .sample h2 {
+            margin: 0 0 8px 0;
+            font-size: 1.1rem
+        }
+
+        .sample p {
+            margin: 8px 0
+        }
+
+        .meta {
+            font-size: 0.9rem;
+            color: var(--muted)
+        }
+
+        /* Font classes */
+        .ff-roboto {
+            font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif
+        }
+
+        .ff-opensans {
+            font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif
+        }
+
+        .ff-pacifico {
+            font-family: 'Pacifico', 'cursive'
+        }
+
+        .usage {
+            margin-top: 16px;
+            background: #f3f6f9;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 0.95rem
+        }
+
+        footer {
+            margin-top: 24px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.9rem
+        }
+
+        /* Small helpers */
+        .example-text {
+            font-size: 1.05rem;
+            line-height: 1.5
+        }
+
+        .display-lg {
+            font-size: 1.8rem
+        }
+
+        .display-md {
+            font-size: 1.2rem
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <div class="card" style="flex:1">
+                <h1>Ejemplos de tipografías — Sans Serif, Sans y Script</h1>
+                <p class="lead">Muestra práctica para elegir y combinar tipografías en interfaces web.</p>
+            </div>
+        </header>
+
+        <section class="grid">
+            <div class="card sample">
+                <h2 class="meta">Sans Serif — Roboto</h2>
+                <div class="ff-roboto">
+                    <p class="display-lg">Roboto — encabezado principal</p>
+                    <p class="example-text">Esta familia funciona muy bien para interfaces, menús y textos largos. Sus
+                        formas neutras facilitan la legibilidad en distintas resoluciones.</p>
+                    <p class="meta">Uso sugerido: encabezados, navegación, botones.</p>
+                </div>
+            </div>
+
+            <div class="card sample">
+                <h2 class="meta">Sans — Open Sans</h2>
+                <div class="ff-opensans">
+                    <p class="display-md">Open Sans — subtítulos y cuerpo</p>
+                    <p class="example-text">Open Sans es una tipografía limpia y muy legible en tamaños pequeños; es
+                        ideal para párrafos, formularios y textos informativos.</p>
+                    <p class="meta">Uso sugerido: párrafos, formularios, microcopys.</p>
+                </div>
+            </div>
+
+            <div class="card sample">
+                <h2 class="meta">Script — Pacifico</h2>
+                <div class="ff-pacifico">
+                    <p class="display-md">Pacifico — acentos y logotipos</p>
+                    <p class="example-text">Las tipografías script aportan carácter y calidez cuando se usan con
+                        moderación. Evita emplearlas en cuerpos de texto largos.</p>
+                    <p class="meta">Uso sugerido: logotipos, llamadas a la acción decorativas, fechas especiales.</p>
+                </div>
+            </div>
+
+            <div class="card sample">
+                <h2 class="meta">Regla práctica: limita la cantidad de fuentes</h2>
+                <div>
+                    <p class="example-text">Limitar el número de tipografías a tres o cuatro evita que el diseño pierda
+                        cohesión y confunda al usuario. Una combinación típica: una sans para encabezados, otra sans
+                        para el cuerpo y una script para acentos.</p>
+                    <div class="usage">
+                        <strong>Consejos rápidos:</strong>
+                        <ul>
+                            <li>Define jerarquía (encabezados, subtítulos, cuerpo, acentos).</li>
+                            <li>Usa variaciones de peso antes de cambiar de familia (ej. Roboto Bold vs Roboto Regular).
+                            </li>
+                            <li>Verifica el contraste y tamaños en móviles.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <footer>
+            <div class="card" style="display:inline-block;padding:12px;">
+                <small>Plantilla de ejemplo — modifica las familias y pesos según la identidad visual de tu
+                    proyecto.</small>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

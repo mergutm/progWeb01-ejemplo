@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Serie en JS</title>
+    <style>
+        #resultado {
+            margin-top: 10px;
+            font-weight: bold;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Generador de secuencia: 1, 2, 4, 8, 16...</h2>
+    <label for="cantidad">Cantidad de elementos:</label>
+    <input type="number" id="cantidad" min="1" oninput="generarSerie()">
+    <div id="resultado"></div>
+
+    <script>
+        function generarSerie() {
+            const n = document.getElementById("cantidad").value;
+            let serie = [];
+            let valor = 1;
+            for (let i = 0; i < n; i++) {
+                serie.push(valor);
+                valor *= 2;
+            }
+            document.getElementById("resultado").innerText = serie;
+        }
+    </script>
+</body>
+
+</html>

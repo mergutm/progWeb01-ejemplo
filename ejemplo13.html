@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS + JS</title>
+    <style>
+        /* Estilo inicial */
+        #texto {
+            font-size: 18px;
+            color: black;
+            font-weight: normal;
+            background-color: rgba(200, 200, 200, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p id="texto">Este es un párrafo de ejemplo que cambiará de estilo.</p>
+        <button onclick="negritas()" id="btnNegritas">Aplicar negritas</button>
+        <button onclick="rojo()" id="btnRojo">Aplicar color rojo</button>
+        <button onclick="reset()" id="btnReset">Estado inicial</button>
+    </div>
+
+    <script>
+        // Referencia al párrafo
+        const texto = document.getElementById("texto");
+
+        function negritas() {
+            document.getElementById("texto").style.fontWeight = "bold";
+        }
+        function rojo() {
+            document.getElementById("texto").style.color = "red";
+        }
+        function reset() {
+            document.getElementById("texto").style.color = "black";
+            document.getElementById("texto").style.fontWeight = "normal";
+        }
+    </script>
+</body>
+
+</html>
