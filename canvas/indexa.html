@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: linear-gradient(90deg,
+                #132440 0%,
+                #16476A 100%
+            );
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card {
+            background-color: rgba(220,220,220,0.8);
+            width: 500px;
+            height: 300px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card" >
+        <canvas id="lineas" width="450" height="250px"></canvas>
+    </div>
+    <div class="card">     &nbsp;    </div>
+    <div class="card">        &nbsp;    </div>
+   
+    <script>
+        function dibujarLinea(){
+            const canvas = document.getElementById('lineas');
+            //lapiz
+            const ctx = canvas.getContext('2d');
+            //recordar que y+ es hacia abajo
+
+            ctx.lineWidth = 2;
+            ctx.strokeStyle = '#444';
+
+            ctx.beginPath();
+            ctx.moveTo(10,10);
+            ctx.lineTo(60,60);
+            ctx.stroke();
+
+        }
+
+        dibujarLinea();
+
+    </script>
+
+</body>
+</html>
