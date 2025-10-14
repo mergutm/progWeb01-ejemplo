@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body{
+        body {
             background: linear-gradient(90deg,
-                #132440 0%,
-                #16476A 100%
-            );
+                    #132440 0%,
+                    #16476A 100%);
 
             display: flex;
             flex-direction: column;
@@ -17,35 +17,50 @@
         }
 
         .card {
-            background-color: rgba(220,220,220,0.8);
+            background-color: rgba(220, 220, 220, 0.8);
             width: 500px;
             height: 300px;
             border-radius: 10px;
         }
     </style>
 </head>
+
 <body>
 
-    <div class="card" >
+    <div class="card">
         <canvas id="lineas" width="450" height="250px"></canvas>
     </div>
-    <div class="card">     &nbsp;    </div>
-    <div class="card">        &nbsp;    </div>
-   
+    <div class="card"> &nbsp; </div>
+    <div class="card"> &nbsp; </div>
+
     <script>
-        function dibujarLinea(){
+        function dibujarLinea() {
             const canvas = document.getElementById('lineas');
             //lapiz
             const ctx = canvas.getContext('2d');
             //recordar que y+ es hacia abajo
-
-            ctx.lineWidth = 2;
-            ctx.strokeStyle = '#444';
+            ctx.lineWidth = 6;
+            ctx.strokeStyle = '#888';
 
             ctx.beginPath();
-            ctx.moveTo(10,10);
-            ctx.lineTo(60,60);
+            ctx.moveTo(10, 10);
+            ctx.lineTo(60, 60);
             ctx.stroke();
+
+            for (let i = 0; i < 200; i += 20) {
+                ctx.beginPath();
+                ctx.moveTo(10, i); //x, y
+                ctx.lineTo(200, i); // x+100 , y
+                ctx.stroke();
+            }
+
+
+            for (let i = 0; i < 200; i += 20) {
+                ctx.beginPath();
+                ctx.moveTo(i, 50); //x, y
+                ctx.lineTo(i, 200); // x+100 , y
+                ctx.stroke();
+            }
 
         }
 
@@ -54,4 +69,5 @@
     </script>
 
 </body>
+
 </html>
