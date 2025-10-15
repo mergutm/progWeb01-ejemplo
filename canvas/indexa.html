@@ -18,20 +18,21 @@
 
         .card {
             background-color: rgba(220, 220, 220, 0.8);
-            width: 500px;
-            height: 300px;
+            width: 600px;
+            height: 600px;
             border-radius: 10px;
         }
     </style>
 </head>
 
 <body>
-
-    <div class="card">
-        <canvas id="lineas" width="450" height="250px"></canvas>
+    <div class="card"> 
+        <canvas id="pelota" width="600px" height="600px"></canvas>
     </div>
-    <div class="card"> &nbsp; </div>
-    <div class="card"> &nbsp; </div>
+
+    <!--div class="card">
+        <canvas id="lineas" width="450" height="250px"></canvas>
+    </div-->
 
     <script>
         function dibujarLinea() {
@@ -98,16 +99,54 @@
 
             ctx.beginPath();
             // ellipse(x, y, radiusX, radiusY, rotation, startAngle, endAngle)
-            ctx.ellipse( 100, 100, 50, 100, 0, 0, 1.5*Math.PI );
+            ctx.ellipse( 300, 100, 50, 100, 0, 0, 1.5*Math.PI );
             ctx.stroke();
 
             ctx.beginPath();
-            ctx.ellipse( 150, 100, 50, 100, 0, 0.5*Math.PI, 1.75*Math.PI );
+            ctx.ellipse( 400, 100, 50, 100, 0.15 * Math.PI, 0.05*Math.PI, 1.75*Math.PI );
             ctx.stroke();
 
         }
+        //dibujarLinea();
 
-        dibujarLinea();
+        const canvas = document.getElementById("pelota");
+        const ctx = canvas.getContext("2d");
+
+        const radio = 25;
+        let y = 100;  // posición inicial de la pelota
+        let vy = 0;  // inicialmente en reposo
+        let x = 300; 
+
+        const gravedad = 0.5;
+        const perdida = 0.85;
+        // para que no rebase el suelo
+
+        const pos_piso = canvas.height - radio;  
+
+        function dibujarPelota(ctx, x,y,radio){
+            ctx.beginPath();
+
+            const gradiente = ctx.createRadialGradient(
+                x+radio/4, y-radio/3,
+                10, 
+                x, y, 
+                radio
+            );
+            gradiente.addColorStop(0.0, '#9cf');
+            gradiente.addColorStop(1.0, '#14d');
+
+            ctx.fillStyle = gradiente;
+
+            ctx.arc(x,y, 
+                    radio,
+                    0, //ang inicial
+                    2*Math.PI///ang final
+                );
+            ctx.fill();
+            //ctx.stroke();
+        }
+        dibujarPelota(ctx, x,y,radio);
+
 
     </script>
 
