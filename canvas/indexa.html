@@ -21,6 +21,10 @@
             width: 600px;
             height: 600px;
             border-radius: 10px;
+            background: linear-gradient(90deg, 
+            #2324,
+            #36478A
+            );
         }
     </style>
 </head>
@@ -116,6 +120,7 @@
         let y = 100;  // posición inicial de la pelota
         let vy = 0;  // inicialmente en reposo
         let x = 300; 
+        let vx = 3;
 
         const gravedad = 0.5;
         const perdida = 0.85;
@@ -132,8 +137,9 @@
                 x, y, 
                 radio
             );
-            gradiente.addColorStop(0.0, '#9cf');
-            gradiente.addColorStop(1.0, '#14d');
+            gradiente.addColorStop(0.0, '#9cfc'); //00
+            gradiente.addColorStop(0.5, '#68dc');
+            gradiente.addColorStop(1.0, '#14dc'); // 1.0
 
             ctx.fillStyle = gradiente;
 
@@ -145,7 +151,35 @@
             ctx.fill();
             //ctx.stroke();
         }
-        dibujarPelota(ctx, x,y,radio);
+
+        function animar(){
+            ctx.clearRect(
+                0,0,
+                canvas.width, canvas.height
+            );
+
+            vy += gravedad;
+            y += vy;
+
+            if (y> pos_piso){
+                y = pos_piso;
+                vy *= -perdida;
+                
+            }
+            
+
+            if (x>= canvas.width - radio){
+                vx -= 1;
+            }
+            else if (x<=radio){
+                vx = Math.abs(vx);
+            }
+            x+=vx;
+
+            dibujarPelota(ctx, x,y,radio);
+            requestAnimationFrame(animar);
+        }
+        animar();       
 
 
     </script>
